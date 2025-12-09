@@ -1,0 +1,30 @@
+{%extends "base_generic.html"%}
+
+{%block content%}
+
+{%if object_list%}
+
+<h1>Lista de eventos</h1>
+
+ <ul>
+{% for i in object_list%}
+<li><a href="">{{i}}</a></li> <button>
+    <a href="{%url 'asistir' i.id%}">Asistir</a>
+</button>
+
+{%endfor%}
+</ul>
+{%else%}
+<h2>No hay eventos</h2>
+
+{%endif%}
+<hr>
+
+{%if messages%}
+<ul>
+{%for message in messages%}
+<li>{{message}}</li>
+{%endfor%}  
+</ul>
+{%endif%}
+{%endblock%}

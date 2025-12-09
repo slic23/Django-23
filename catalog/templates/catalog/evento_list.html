@@ -1,0 +1,28 @@
+{%extends "base_generic.html"%}
+
+{%block content%}
+
+{%if object_list%}
+
+<h1>Lista de eventos</h1>
+
+<ul>
+    {% for i in object_list%}
+    <li><a href="">{{i}}</a></li>
+    {%if  i.evento_caducado%}
+    <p>El evento ha caducado</p>
+    {%else%}
+    <p>Quedan {{i.eventoTiempoRestante}} dias</p>
+    {% endif %}
+
+    {%endfor%}
+</ul>
+{%else%}
+<h2>No hay eventos</h2>
+
+{%endif%}
+
+
+{%if messages%}
+{%endif%}
+{%endblock%}

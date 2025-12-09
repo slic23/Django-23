@@ -1,0 +1,23 @@
+{%extends "base_generic.html"%}
+{%block content%}
+
+{%if object_list %}
+<h1> lista de prestados </h1>
+
+<ul>
+
+    {%for i in object_list %}
+    <li><a href ="{% url "ampliar" i.id %}"> {{i}}</a></li>
+
+    {%endfor%}
+</ul>
+
+{%else%}
+<h2> no hay libros </h2>
+
+    {%endif%}
+
+
+
+
+{%endblock%}

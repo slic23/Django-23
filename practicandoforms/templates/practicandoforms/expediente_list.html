@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%block content%}
+
+     {%if object_list%}
+     <h1>Lista de expendientes : {{fecha_hoy}}</h1>
+        <ul>
+
+            {%for i in object_list%}
+            <li>{{i}}</li>
+            {%endfor%}
+        </ul>
+        
+
+    {%else%}
+
+    <h3>No hay expendientes </h3>
+     
+    {%endif%}
+    {%endblock%}
+</body>
+</html>
